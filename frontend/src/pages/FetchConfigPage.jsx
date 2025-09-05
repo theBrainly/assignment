@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
+import { API } from '../config/api';
 
 const FetchConfigPage = () => {
     const [configDetails, setConfigDetails] = useState(null);
@@ -17,7 +18,7 @@ const FetchConfigPage = () => {
         setLoading(true);
         setError(null);
 
-        axios.get(`http://localhost:8080/api/configurations/${configId}`)
+        axios.get(API.endpoints.configurations(configId))
             .then(response => {
                 console.log("Configuration Details:", response.data);
                 setConfigDetails(response.data);
@@ -197,7 +198,7 @@ const FetchConfigPage = () => {
             )}
 
             <footer style={styles.footer}>
-                <p>Backend API Base URL: http://localhost:8080</p>
+                <p>Backend API Base URL: {API.baseUrl}</p>
             </footer>
         </div>
     )

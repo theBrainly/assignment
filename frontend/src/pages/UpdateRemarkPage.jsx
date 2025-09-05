@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
+import { API } from '../config/api';
 
 const UpdateRemarkPage = () => {
     const [updateConfigId, setUpdateConfigId] = useState('');
@@ -24,7 +25,7 @@ const UpdateRemarkPage = () => {
         setError(null);
         setSuccess(null);
 
-        axios.put(`http://localhost:8080/api/configurations/${updateConfigId}`, {
+        axios.put(API.endpoints.configurations(updateConfigId), {
             newRemark: remark
         })
             .then(response => {
@@ -175,7 +176,7 @@ const UpdateRemarkPage = () => {
             </div>
 
             <footer style={styles.footer}>
-                <p>Backend API Base URL: http://localhost:8080</p>
+                <p>Backend API Base URL: {API.baseUrl}</p>
             </footer>
         </div>
     );

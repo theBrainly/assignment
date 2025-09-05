@@ -114,11 +114,15 @@ frontend/
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Create or verify the `.env` file with the following variable:
+   ```
+   VITE_APP_API_BASE_URL=http://localhost:8080/api
+   ```
+4. Start the development server:
    ```bash
    npm run dev
    ```
-4. Access the application at: `http://localhost:5173`
+5. Access the application at: `http://localhost:5173`
 
 ## Features
 

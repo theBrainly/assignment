@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { API } from '../config/api';
 
 const HomePage = () => {
   const styles = {
@@ -99,8 +100,8 @@ const HomePage = () => {
       </div>
 
       <footer style={styles.footer}>
-        <p>Backend API Base URL: http://localhost:8080</p>
-        <p>Make sure your backend server is running on port 8080</p>
+        <p>Backend API Base URL: {API.baseUrl}</p>
+        <p>Make sure your backend server is running</p>
       </footer>
     </div>
   );

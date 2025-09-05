@@ -12,7 +12,7 @@ const port=process.env.PORT || 4000;
 const app=express();
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend's origin
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173', // Will be replaced with your deployed frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
     credentials: true // Enable cookies and credentials
